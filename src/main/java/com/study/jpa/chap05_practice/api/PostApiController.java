@@ -25,12 +25,19 @@ public class PostApiController {
         게시물 삭제:     /posts/{id}       - DELETE
      */
 
-    @GETMapping
+    @GetMapping
     public ResponseEntity<?> list(PageDTO pageDTO) {
         log.info("/api/v1/posts?page={}&size={}", pageDTO.getPage(), pageDTO.getSize());
 
         PostListResponseDTO dto = postService.getPosts(pageDTO);
 
         return ResponseEntity.ok().body(dto);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> detail(@PathVariable Long id) {
+        log.info("/api/v1/posts/{}: ", id);
+
+        return null;
     }
 }
