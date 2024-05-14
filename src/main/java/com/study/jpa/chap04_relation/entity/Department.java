@@ -8,7 +8,7 @@ import java.util.List;
 
 @Setter
 @Getter
-@ToString
+@ToString(exclude = {"employees"})
 @EqualsAndHashCode(of = "id")
 @NoArgsConstructor
 @AllArgsConstructor
